@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<br>
+  <div class="large-12 columns">
+    <h4><a href="/">Inicio</a> /Lista de Maquinas</h4>
+    <table>
+      <thead>
+        <tr>
+          <th width="235">id_maquina</th>
+          <th width="235">Placa</th>
+          <th width="235">Estado</th>
+          <th width="235">Descripcion</th>
+          <th width="235">Eliminar</th>
+          <th width="235">Editar</th>
+        </tr>
+      </thead>
+      <!-- IMPORTANT, class="list" have to be at tbody -->
+      <tbody class="list">
+        {% for maquina in Maquinas %}
+        <tr>
+          <td>{{maquina.id_maquina}}</td>
+          <td>{{maquina.Placa}}</td>
+          <td>{{maquina.Estado}}</td>
+          <td>{{maquina.Descripcion}}</td>
+          <td><a href={{ request.get_host }}/maquina/eliminar/{{maquina.id_maquina}}><div class="glyph-icon flaticon-trash10" style="color: rgb(231, 37, 18);"></div></a></td>
+          <td><a href={{ request.get_host }}/maquina/editar/{{maquina.id_maquina}}><div class="glyph-icon flaticon-star30" style="color: rgb(231, 37, 18);"></div></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="large-12 columns">
+          <a href="/maquina/ingresar" style="background-color:#7bac0f" class="button tiny " >Agregar</a>
+    </div>
+</div>
+{% endblock %}

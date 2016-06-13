@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<br>
+  <div class="large-12 columns">
+    <h4><a href="/">Inicio</a> /Lista de Volquetas</h4>
+    <table>
+      <thead>
+        <tr>
+          <th width="235">id_volco</th>
+          <th width="235">Placa</th>
+          <th width="235">Chofer</th>
+          <th width="235">Eliminar</th>
+          <th width="235">Editar</th>
+        </tr>
+      </thead>
+      <!-- IMPORTANT, class="list" have to be at tbody -->
+      <tbody class="list">
+        {% for volco in Volcos %}
+        <tr>
+          <td>{{volco.id_volco}}</td>
+          <td>{{volco.Placa}}</td>
+          <td>{{volco.Chofer}}</td>
+          <td><a href={{ request.get_host }}/volco/eliminar/{{volco.id_volco}}><div class="glyph-icon flaticon-trash10" style="color: rgb(231, 37, 18);"></div></a></td>
+          <td><a href={{ request.get_host }}/volco/editar/{{volco.id_volco}}><div class="glyph-icon flaticon-star30" style="color: rgb(231, 37, 18);"></div></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="large-12 columns">
+          <a href="/volco/ingresar" style="background-color:#7bac0f" class="button tiny " >Agregar</a>
+    </div>
+</div>
+{% endblock %}

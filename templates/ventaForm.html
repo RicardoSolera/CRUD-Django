@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+	<div class="large-12 columns">
+  	<h4><a href="/">Inicio</a> /Nueva Venta</h4>
+    <div class=" panel large-12 columns">
+      <form  enctype='multipart/form-data' action='' method='POST'>
+      	<div class="row">
+        	<p style="text-align:center; color:gray;"> <em> Datos de la Venta</em></p>
+        	
+        	<div class="  large-12 columns">
+          	{% csrf_token %}
+            {{ form.non_field_errors }}
+						<label > id_tierra:
+            	{{ form.id_tierra }}
+            </label>
+            {% if form.id_tierra.errors %}
+            	{% for error in form.id_tierra.errors %}
+              	<small class="error">
+                	{{ error|escape }}
+                </small>
+              {% endfor %}
+            {% endif %}
+          </div>
+
+		<div class="large-12 columns">
+	        	<label > id_volco:
+	          	{{ form.id_volco }}
+	          </label>
+	          {% if form.id_volco.errors %}
+	          	{% for error in form.id_volco.errors %}
+	            	<small class="error">
+	              	{{ error|escape }}
+	              </small>
+	            {% endfor %}
+	          {% endif %}
+	        </div>
+        </div>
+				<div class="row">
+        	<div class="large-6 columns">
+						<label> Cantidad:
+							{{ form.cantidad }}
+						</label>
+						{% if form.cantidad.errors %}
+							{% for error in form.cantidad.errors %}
+								<small class="error">
+									{{ error|escape }}
+								</small>
+							{% endfor %}
+						{% endif %}
+			</div>
+
+				<br>
+    		<div class="large-12 columns">
+    			<input style="background-color:#7bac0f" class="button tiny " type='submit' value='Registrar Venta'/>
+				</div>
+  		</form>
+		</div>
+	</div>
+
+{% endblock %}

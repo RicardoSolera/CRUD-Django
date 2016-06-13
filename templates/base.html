@@ -1,0 +1,128 @@
+<!doctype html>
+<html class="no-js" lang="es">
+<head>
+    <meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Balastrera S.A</title>
+    <meta name="description" content="Free Zurb foundation one page template on foundationdeck">
+
+    <link href='{{STATIC_URL}}css/letra.css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/foundation.min.css" />
+    <script src="{{STATIC_URL}}js/vendor/modernizr.js"></script>
+    <link href="{{STATIC_URL}}css/style.css" rel="stylesheet" />
+    <link href="{{STATIC_URL}}css/flaticon.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="intro">
+        <div class="row">
+            <div class="large-6 medium-6 columns">
+                <img src="{{STATIC_URL}}img/Nodes.png" alt="logo" />
+                <h3 class="color-white">Balastrera SA</h3>
+                <h6 class="color-white" style="line-height: 27px;">Pagina de administracion Principal.
+                </h6>
+            </div>
+            <div class="large-6 medium-6 columns">
+                <div id="available">
+                    <center><img src="{{STATIC_URL}}img/descarga.jpg" alt="logo" /></center>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="features">
+        <div class="row">
+            <div class="large-4 medium-6 small-12 columns">
+                <div class="featured-item">
+                    <div class="glyph-icon flaticon-three17"></div>
+                    <a href={{ request.get_host }}/tierra/listado><h6 class="text-center">Administrar Tierras</h6>
+                    <div>
+                        Registra, Edita, Elimina tipos de tierra.
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="large-4 medium-6 small-12 columns">
+                <div class="featured-item">
+                    <div class="glyph-icon flaticon-clipboard11" style="color: rgb(8, 161, 181);"></div>
+                    <a href={{ request.get_host }}/volco/listado><h6 class="text-center">Administrar Volquetas</h6>
+                    <div>
+                        Registra, Edita y Actualiza Volquetas. 
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <!--div class="large-4 medium-6 small-12 columns">
+                <div class="featured-item">
+                    <div class="glyph-icon flaticon-cart5" style="color: rgb(23, 199, 85);"></div>
+                    <a href={{ request.get_host }}/venta/listado><h6 class="text-center">Registrar Venta</h6>
+                    <div>
+                        Administrar las ventas en el sistema.
+                    </div>
+                    </a>
+                </div>
+            </div-->
+
+            <div class="large-4 medium-6 small-12 columns">
+                <div class="featured-item">
+                    <div class="glyph-icon flaticon-clipboard11" style="color: rgb(23, 199, 85);"></div>
+                    <a href={{ request.get_host }}/maquina/listado><h6 class="text-center">Administrar Maquinas</h6>
+                    <div>
+                        Registra, Edita y Actualiza Maquinas.
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="why">
+        <div class="row">
+            <div class="large-12 columns">
+                {% block contenido %} {% endblock %}
+            </div>
+        </div>
+    </div>
+    <div id="testimonial">
+        <div class="row">
+            <div class="large-12 columns">
+                <ul class="example-orbit-content" data-orbit>
+                    <li data-orbit-slide="headline-1">
+                        <div class="text-center">
+                            <h6 class="color-white">Medio Ambiente</h6>
+                            <p class="color-white">Somos una empresa comprometida con el medio ambiente.</p>
+                        </div>
+                    </li>
+                    <li data-orbit-slide="headline-2">
+                        <div>
+                            <h6 class="color-white">Siguenos en Facebook</h6>
+                            <a href="https://fb.com/" target="_blank"><p class="color-white">Facebook</p></a>
+                        </div>
+                    </li>
+                    <li data-orbit-slide="headline-3">
+                        <div>
+                            <h6 class="color-white">Tenemos las mejores tierras</h6>
+                            <p class="color-white">Tenemos el sitio con las tierras de mejor calidad de la region</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="row text-center">
+            <div class="large-12 columns">
+                <h6 class="color-blue">Balastrera SA 2016 &copy;</h6>
+                <a href="http://twitter.com/@rbaenan" target="_blank">Creditos Ruben Baena<img src="{{STATIC_URL}}img/twitter-logo.png" alt="logo" /></a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="{{STATIC_URL}}js/vendor/jquery.js"></script>
+<script src="{{STATIC_URL}}js/foundation.min.js"></script>
+<script>
+    $(document).foundation();
+</script>
+</html>

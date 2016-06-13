@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block contenido %}
+
+	<div class="large-12 columns">
+  	<h4><a href="/">Inicio</a> /Nueva Tierra</h4>
+    <div class=" panel large-12 columns">
+      <form  enctype='multipart/form-data' action='' method='POST'>
+      	<div class="row">
+        	<p style="text-align:center; color:gray;"> <em> Datos de la Tierra</em></p>
+        	
+        	<div class="  large-12 columns">
+          	{% csrf_token %}
+            {{ form.non_field_errors }}
+						<label > Nombre:
+            	{{ form.Nombre }}
+            </label>
+            {% if form.Nombre.errors %}
+            	{% for error in form.Nombre.errors %}
+              	<small class="error">
+                	{{ error|escape }}
+                </small>
+              {% endfor %}
+            {% endif %}
+          </div>
+
+		<div class="large-12 columns">
+	        	<label > Descripcion:
+	          	{{ form.Descripcion }}
+	          </label>
+	          {% if form.Descripcion.errors %}
+	          	{% for error in form.Descripcion.errors %}
+	            	<small class="error">
+	              	{{ error|escape }}
+	              </small>
+	            {% endfor %}
+	          {% endif %}
+	        </div>
+        </div>
+				<div class="row">
+        	<div class="large-6 columns">
+						<label> Precio:
+							{{ form.Precio }}
+						</label>
+						{% if form.Precio.errors %}
+							{% for error in form.Precio.errors %}
+								<small class="error">
+									{{ error|escape }}
+								</small>
+							{% endfor %}
+						{% endif %}
+			</div>
+
+				<br>
+    		<div class="large-12 columns">
+    			<input style="background-color:#7bac0f" class="button tiny " type='submit' value='Registrar Tierra'/>
+				</div>
+  		</form>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<br>
+  <div class="large-12 columns">
+    <h4><a href="/">Inicio</a> /Lista de Tierras</h4>
+    <table>
+      <thead>
+        <tr>
+          <th width="235">id_tierra</th>
+          <th width="235">Nombre</th>
+          <th width="235">Descripcion</th>
+          <th width="235">Precio</th>
+          <th width="235">Eliminar</th>
+          <th width="235">Editar</th>
+        </tr>
+      </thead>
+      <!-- IMPORTANT, class="list" have to be at tbody -->
+      <tbody class="list">
+        {% for tierra in Tierras %}
+        <tr>
+          <td>{{tierra.id_tierra}}</td>
+          <td>{{tierra.Nombre}}</td>
+          <td>{{tierra.Descripcion}}</td>
+          <td>{{tierra.Precio}}</td>
+          <td><a href={{ request.get_host }}/tierra/eliminar/{{tierra.id_tierra}}><div class="glyph-icon flaticon-trash10" style="color: rgb(231, 37, 18);"></div></a></td>
+          <td><a href={{ request.get_host }}/tierra/editar/{{tierra.id_tierra}}><div class="glyph-icon flaticon-star30" style="color: rgb(231, 37, 18);"></div></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="large-12 columns">
+          <a href="/tierra/ingresar" style="background-color:#7bac0f" class="button tiny " >Agregar</a>
+    </div>
+</div>
+{% endblock %}
